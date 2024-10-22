@@ -1689,9 +1689,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cameraTransform: {fileID: 963194228}
   _speedWalk: 3
-  _speedRotate: 70
+  _speedRotate: 50
   _speedRun: 6
-  _speedSneak: 2
+  _speedSneak: 1.5
 --- !u!54 &1100867041
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1708,8 +1708,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &1100867042
-BoxCollider:
+--- !u!136 &1100867042
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1718,8 +1718,9 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1103604318
 GameObject:
