@@ -11,9 +11,12 @@ public class PlayerCharacter : MonoBehaviour
     private PlayerControl _control;
     private Rigidbody _rigidbody;
     private float _currentSpeed;
-    private Vector3 _walkColliderSize;
-    private Vector3 _sneakColliderSize = new Vector3(1, 1f, 1);
-    private BoxCollider _collider;
+    private float _walkColliderHeight;
+    private float _sneakColliderSize = 1f;
+    private Vector3 _sneakColliderCenter = new Vector3(0, -0.5f, 0);
+    private Vector3 _camerPocitionSneak = new Vector3(0, 0, -0.2f);
+    private Vector3 _camerPositionWalk = new Vector3(0,0.7f,-0.2f);
+    private CapsuleCollider _collider;
 
     private void Awake()
     {
@@ -21,8 +24,8 @@ public class PlayerCharacter : MonoBehaviour
         SetCursorSetting();
         _rigidbody = GetComponent<Rigidbody>();
         _currentSpeed = _speedWalk;
-        _collider = GetComponent<BoxCollider>();
-        _walkColliderSize = _collider.size;
+        _collider = GetComponent<CapsuleCollider>();
+        _walkColliderHeight = _collider.height;
         // Подпись на кнопки бега и приседеа
         _control.Player.Run.started += context => Run();
         _control.Player.Sneak.started += context => Sneak();
@@ -65,14 +68,17 @@ public class PlayerCharacter : MonoBehaviour
     private void Walk() 
     { 
         _currentSpeed = _speedWalk;
-        _collider.size = _walkColliderSize;
+        _collider.height = _walkColliderHeight;
+        _collider.center = Vector3.zero;
+        _cameraTransform.localPosition = _camerPositionWalk;
     }
 
     private void Sneak() 
     {
         _currentSpeed = _speedSneak;
-       // _collider.center = _sneakOffsetCenter;
-        _collider.size = _sneakColliderSize;
+        _collider.height = _sneakColliderSize;
+        _collider.center = _sneakColliderCenter;
+        _cameraTransform.localPosition = _camerPocitionSneak;
         
     }
 
