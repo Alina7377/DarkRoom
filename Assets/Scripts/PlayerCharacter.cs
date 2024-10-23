@@ -29,10 +29,10 @@ public class PlayerCharacter : MonoBehaviour
         _currentSpeed = _speedWalk;
         _collider = GetComponent<CapsuleCollider>();
         _walkColliderHeight = _collider.height;
-        // Подпись на кнопки бега и приседеа
+        // Подпись на кнопки бега и приседа
         _control.Player.Run.started += context => Run();
         _control.Player.Sneak.started += context => Sneak();
-        // Подпись на возыращение к хотьбе
+        // Подпись на возвращение к хотьбе
         _control.Player.Run.canceled += context => Walk();
         _control.Player.Sneak.canceled += context => Walk();
     }
@@ -99,7 +99,6 @@ public class PlayerCharacter : MonoBehaviour
         if (direction == Vector2.zero || _isSneaking) _audioManager.StopAudio();
         else _audioManager.PalyAudioIfNotPlaying();
         _rigidbody.velocity = (transform.forward * direction.y + transform.right * direction.x) * _currentSpeed;
-        _rigidbody.angularVelocity = Vector3.zero;
     }
 
     private void Rotate(Vector2 rotate)
@@ -113,7 +112,10 @@ public class PlayerCharacter : MonoBehaviour
         rotation *= Quaternion.Euler(rotateX, 0, 0);
         if (rotation.x < 0.55 && rotation.x > -0.55)
             _cameraTransform.localRotation = rotation;
+        // Разрешаем поповрот только по мыши. Исключаем поворот при столкновении
+        _rigidbody.freezeRotation = false;
         transform.Rotate(0, mauseX, 0);
+        _rigidbody.freezeRotation = true;
     }
 
     public void SetCursorSetting() 
@@ -130,6 +132,5 @@ public class PlayerCharacter : MonoBehaviour
     public void ActivateControl() 
     {
         _control.Enable();
-    }
-
+    }   
 }
