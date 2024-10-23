@@ -13,6 +13,11 @@ public class AudioManager : MonoBehaviour
         _audioSource.Play();
     }
 
+    public void PalyAudioIfNotPlaying() 
+    {
+        if (!_audioSource.isPlaying) PlayAudio();
+    }
+
     public void StopAudio()
     {
         _audioSource.Stop();   
