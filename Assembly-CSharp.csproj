@@ -62,17 +62,16 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\LocationSetting.cs" />
     <Compile Include="Assets\Scripts\Structurs\SRoomSpawnPoint.cs" />
-    <Compile Include="Assets\Scripts\EnemyDetected.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
     <Compile Include="Assets\Scripts\IActivationObjects.cs" />
     <Compile Include="Assets\Scripts\TriggerEvent.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\SODataRoom.cs" />
     <Compile Include="Assets\Scripts\PlayerCharacter.cs" />
     <Compile Include="Assets\Scripts\RoomSetting.cs" />
-    <Compile Include="Assets\Scripts\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\AnimatorObjects.cs" />
     <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\TriggerActivate.cs" />
     <Compile Include="Assets\Scripts\LampFlashing.cs" />
     <Compile Include="Assets\Scripts\InputSystem\PlayerControl.cs" />
     <Compile Include="Assets\Scripts\AnimateObjects.cs" />

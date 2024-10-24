@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 8844509326724414672}
   - component: {fileID: 8844509326724414678}
   - component: {fileID: 8844509326724414673}
+  - component: {fileID: 8101244882665980012}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -125,7 +126,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.09, y: 1, z: -3.804}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 1, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8844509325800862790}
@@ -223,7 +224,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &8844509326724414672
 CapsuleCollider:
@@ -360,3 +361,17 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: 9ae6147a4aaa8894d873bdc9cb63a206, type: 3}
   - {fileID: 8300000, guid: 4d2a5eaae01ec7d49af95915adc62f97, type: 3}
+--- !u!114 &8101244882665980012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8844509326724414696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25cedbecce9e0342a7ad0c0d9ac40a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animation: {fileID: 0}
+  _isReactivate: 1
